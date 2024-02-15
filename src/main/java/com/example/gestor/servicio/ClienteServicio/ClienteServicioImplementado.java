@@ -23,6 +23,12 @@ public class ClienteServicioImplementado implements IClienteServicio {
         return this.clienteRepositorio.save(cliente);
     }
 
+    @Override
+    public Cliente cliente_mas_frecuente() {
+
+        Cliente cliente= this.clienteRepositorio.cliente_mas_frecuente();
+        return  cliente;
+    }
 
     @Override
     public void eliminarCliente(String id) {

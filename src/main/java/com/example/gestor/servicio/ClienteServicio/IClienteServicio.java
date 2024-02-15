@@ -9,5 +9,7 @@ public interface IClienteServicio {
 
     Cliente agregar_cliente(Cliente cliente);
 
+    Cliente cliente_mas_frecuente();
+
     void eliminarCliente(String id);
 }

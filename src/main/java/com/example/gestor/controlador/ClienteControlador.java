@@ -18,7 +18,7 @@ public class ClienteControlador {
     private ClienteServicioImplementado clienteServicioImplementado;
 
     @GetMapping("/clientes")
-    public ResponseEntity<List<Cliente>> obtenerActividades(){
+    public ResponseEntity<List<Cliente>> obtenerClientes(){
         List<Cliente> clientes=this.clienteServicioImplementado.lista_cliente();
         if (clientes!= null){
             return ResponseEntity.ok(clientes);
@@ -27,7 +27,7 @@ public class ClienteControlador {
     }
 
     @PostMapping("/clientes")
-    public ResponseEntity<Cliente> obtenerActividades(@RequestBody Cliente cliente ){
+    public ResponseEntity<Cliente> agregarClientes(@RequestBody Cliente cliente ){
         if (cliente!= null){
             Cliente cliente1= this.clienteServicioImplementado.agregar_cliente(cliente);
             return ResponseEntity.ok(cliente1);
@@ -45,5 +45,14 @@ public class ClienteControlador {
             return  ResponseEntity.badRequest().build();
             //mensaje
         }
+    }
+
+    @GetMapping("/clientes_frecuente")
+    public ResponseEntity<Cliente> cliente_mas_frecuente(){
+        Cliente cliente1= this.clienteServicioImplementado.cliente_mas_frecuente();
+        if (cliente1!= null){
+            return ResponseEntity.ok(cliente1);
+        }
+        return ResponseEntity.badRequest().build();
     }
 }

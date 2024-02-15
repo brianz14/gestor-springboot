@@ -17,7 +17,12 @@ public class Actividad {
     private String descripcion_acti;
     private LocalDate fecha_inicio_acti;
     private LocalDate fecha_fin_acti;
-    private int nro_participantes;
+    private int p_adulto;
+    private int p_nino;
+    private int p_anciano;
+
+    @Column(nullable = false)
+    private int precioTotal;
 
     @ManyToOne
     @JoinColumn(name = "nro_doc_cli")
@@ -27,7 +32,4 @@ public class Actividad {
     @JoinColumn(name = "cod_emp")
     private Empleado empleado;
 
-    @ManyToOne
-    @JoinColumn(name = "id_precio")
-    private Precio precio;
 }
