@@ -19,4 +19,5 @@ public interface EmpleadoRepositorio extends JpaRepository<Empleado,Integer> {
     @Query(value = "select * from empleado e1 order by e1.cod_emp desc limit 1 ",nativeQuery = true)
     Empleado ultimo_empleado();
 
+
 }

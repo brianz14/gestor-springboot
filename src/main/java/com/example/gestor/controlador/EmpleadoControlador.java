@@ -68,6 +68,13 @@ public class EmpleadoControlador {
         return ResponseEntity.badRequest().build();
     }
 
+
+    @GetMapping("/empleados_total")
+    public long totalEmpleados(){
+        long total= this.empleadoServicioImplementado.totalEmpleados();
+        return  total;
+    }
+
     @GetMapping("/empleados_ultimo")
     public ResponseEntity<Empleado> ultimo_empleado() {
 

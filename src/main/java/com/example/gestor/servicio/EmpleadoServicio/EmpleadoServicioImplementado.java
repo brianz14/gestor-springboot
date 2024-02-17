@@ -42,6 +42,11 @@ public class EmpleadoServicioImplementado implements IEmpleadoServicio {
     }
 
     @Override
+    public long totalEmpleados() {
+        return this.empleadoRepositorio.count();
+    }
+
+    @Override
     public void eliminarEmpleado(int id) {
         this.empleadoRepositorio.deleteById(id);
     }

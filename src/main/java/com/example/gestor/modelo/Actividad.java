@@ -13,6 +13,7 @@ import java.time.LocalDate;
 public class Actividad {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_acti;
     private String descripcion_acti;
     private LocalDate fecha_inicio_acti;
@@ -22,7 +23,7 @@ public class Actividad {
     private int p_anciano;
 
     @Column(nullable = false)
-    private int precioTotal;
+    private double precioTotal;
 
     @ManyToOne
     @JoinColumn(name = "nro_doc_cli")

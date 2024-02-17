@@ -47,6 +47,12 @@ public class ClienteControlador {
         }
     }
 
+    @GetMapping("/clientes_total")
+    public long totalClientes(){
+        long total = this.clienteServicioImplementado.total_clientes();
+        return total;
+    }
+
     @GetMapping("/clientes_frecuente")
     public ResponseEntity<Cliente> cliente_mas_frecuente(){
         Cliente cliente1= this.clienteServicioImplementado.cliente_mas_frecuente();

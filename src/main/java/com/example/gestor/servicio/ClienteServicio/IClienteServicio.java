@@ -11,5 +11,7 @@ public interface IClienteServicio {
 
     Cliente cliente_mas_frecuente();
 
+    long total_clientes();
+
     void eliminarCliente(String id);
 }

@@ -24,12 +24,20 @@ public class ActividadServicioImplementado implements IActividadServicio {
 
     @Override
     public Actividad agregar_actividad(Actividad actividad) {
-        if (actividad.getCliente()== null){
-            System.out.println("esta vacio cliente\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        }
 
         return this.actividadRepositorio.save(actividad);
     }
+
+    @Override
+    public long total_actividades() {
+        return  this.actividadRepositorio.count();
+    }
+
+    @Override
+    public int recaudacion_total() {
+        return this.actividadRepositorio.recaudacionTotal();
+    }
+
 
     @Override
     public void eliminarActividad(int id) {

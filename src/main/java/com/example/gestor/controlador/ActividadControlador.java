@@ -45,6 +45,22 @@ public class ActividadControlador {
         }
         return ResponseEntity.badRequest().build();
     }
+
+
+    @GetMapping("/actividades_total")
+    public long totalActividades(){
+        long total= this.actividadServicioImplementado.total_actividades();
+        return  total;
+    }
+
+    @GetMapping("/actividades_recaudacion")
+    public int totalRecaudacionActividad(){
+        int total= this.actividadServicioImplementado.recaudacion_total();
+        return  total;
+    }
+
+
+
     @DeleteMapping("/actividades/{id}")
     public ResponseEntity<Map<String,Boolean>> eliminarActividad(@PathVariable int id){
         if (id!=-1){

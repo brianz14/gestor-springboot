@@ -31,6 +31,12 @@ public class ClienteServicioImplementado implements IClienteServicio {
     }
 
     @Override
+    public long total_clientes() {
+
+        return this.clienteRepositorio.count();
+    }
+
+    @Override
     public void eliminarCliente(String id) {
         this.clienteRepositorio.deleteById(id);
     }

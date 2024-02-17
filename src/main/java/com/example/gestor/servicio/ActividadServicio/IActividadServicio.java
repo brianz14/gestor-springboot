@@ -12,6 +12,10 @@ public interface IActividadServicio {
 
     Actividad agregar_actividad(Actividad actividad);
 
+    long total_actividades();
+
+    int recaudacion_total();
+
     void eliminarActividad(int id);
 
 

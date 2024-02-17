@@ -1,6 +1,5 @@
 package com.example.gestor.servicio.EmpleadoServicio;
 
-import com.example.gestor.modelo.Cliente;
 import com.example.gestor.modelo.Empleado;
 
 import java.util.List;
@@ -14,5 +13,7 @@ public interface IEmpleadoServicio {
     Empleado empleado_login(String email);
 
     Empleado  ultimo_empleado();
+
+    long totalEmpleados();
     void eliminarEmpleado(int id);
 }
